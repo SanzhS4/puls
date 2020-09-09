@@ -3,7 +3,8 @@
 @import 'blocks/header';
 @import 'blocks/buttons';
 @import 'blocks/advantages';
-
+@import 'blocks/consultation';
+@import 'blocks/forms';
 
 * {
   font-family: 'Museo Sans Cyrl', sans-serif;
@@ -22,6 +23,14 @@
   text-align: center;
   color: #0d0d0d;
   text-transform: uppercase;
+
+  &_left {
+    font-size: 36px;
+    line-height: 37px;
+    font-weight: bold;
+    text-align: left;
+    color: #ffffff;
+  }
 }
 
 @import 'base/media';

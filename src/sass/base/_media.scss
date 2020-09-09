@@ -28,6 +28,10 @@
       font-size: 20px;
     }
   }
+
+  .consultation {
+    padding: 70px 0 80px 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -58,7 +62,10 @@
   .button {
     &_main {
       margin-top: 50px;
-      height: 40px;
+    }
+
+    &_submit {
+      height: 50px;
     }
   }
 
@@ -96,6 +103,10 @@
 
   .title {
     font-size: 24px;
+
+    &_left {
+      text-align: center;
+    }
   }
 
   .advantages {
@@ -122,6 +133,24 @@
       font-size: 12px;
     }
 
+  }
+
+  .consultation {
+    min-height: 600px;
+    padding: 40px 0 50px 0;
+
+    &__descr {
+      margin: 0 auto;
+      margin-top: 60px;
+      padding: 0 25px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .feed_form {
+      margin: 0 auto;
+      margin-top: 36px;
+    }
   }
 }
 
@@ -171,6 +200,13 @@
   }
 
   .title {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .consultation {
+    &__descr {
+      width: 100%;
+      font-size: 16px;
+    }
   }
 }
