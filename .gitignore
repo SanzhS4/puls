@@ -21,4 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 #fonts
-/fonts
+src/fonts
+
+#sass
+src/sass
