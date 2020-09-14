@@ -12,6 +12,13 @@
   .title {
     font-size: 28px;
   }
+
+  .reviews {
+    &__text {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
 }
 
 @media (max-width: 991px) {
@@ -31,6 +38,32 @@
 
   .consultation {
     padding: 70px 0 80px 0;
+  }
+
+  .carousel {
+    &__inner {
+      width: 700px;
+    }
+  }
+
+  .slick-slide img {
+    max-width: 700px;
+  }
+
+  .catalog {
+    &__content {
+      padding: 0 40px;
+    }
+
+    &-item {
+      &:nth-child(3n) {
+        margin-right: 20px;
+      }
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
   }
 }
 
@@ -132,7 +165,6 @@
       margin-top: 10px;
       font-size: 12px;
     }
-
   }
 
   .consultation {
@@ -150,6 +182,106 @@
     .feed_form {
       margin: 0 auto;
       margin-top: 36px;
+    }
+  }
+
+  .carousel {
+    padding: 60px 0;
+    &__inner {
+      width: 500px;
+    }
+  }
+
+  .slick {
+    &-slide img {
+      max-width: 500px;
+    }
+    &-slider {
+      position: relative;
+      display: block;
+      user-select: none;
+      touch-action: pan-y;
+    }
+    &-dots {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      bottom: -25px;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        button {
+          position: relative;
+          font-size: 0;
+          line-height: 0;
+          display: block;
+          width: 20px;
+          height: 20px;
+          padding: 5px;
+          cursor: pointer;
+          color: transparent;
+          border: 0;
+          outline: none;
+          background: transparent;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: #000;
+            opacity: 0.25;
+          }
+        }
+        &.slick-active {
+          button {
+            &:before {
+              opacity: 0.75;
+            }
+          }
+        }
+      }
+    }
+  }
+  .catalog {
+    &__tabs {
+      margin-top: 50px;
+    }
+    &__content {
+      margin-top: 50px;
+      justify-content: center;
+    }
+    &-item {
+      margin-right: 0;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .reviews {
+    padding: 60px 0;
+    &__items {
+      margin-top: 50px;
+    }
+    &__item {
+      margin-bottom: 50px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -207,6 +339,44 @@
     &__descr {
       width: 100%;
       font-size: 16px;
+    }
+  }
+  .carousel {
+    padding: 60px 0;
+
+    &__inner {
+      width: 300px;
+    }
+  }
+
+  .slick {
+    &-slide img {
+      max-width: 300px;
+    }
+  }
+  .catalog {
+    &__tabs {
+      margin-top: 40px;
+      flex-direction: column;
+    }
+    &__tab {
+      margin-bottom: 10px;
+    }
+    &__content {
+      margin-top: 40px;
+      padding: 0;
+    }
+  }
+  .reviews {
+    &__item {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__descr {
+      margin-top: 10px;
+      margin-left: 0;
+      width: 100%;
+      text-align: center;
     }
   }
 }
