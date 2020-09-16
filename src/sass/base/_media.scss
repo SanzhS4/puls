@@ -1,4 +1,8 @@
 @media (max-width: 1200px) {
+  .container {
+    max-width: 700px;
+  }
+
   .promo {
     &__header {
       font-size: 40px;
@@ -22,10 +26,6 @@
 }
 
 @media (max-width: 991px) {
-  .container {
-    max-width: 700px;
-  }
-
   .promo {
     &__header {
       font-size: 38px;
@@ -42,12 +42,14 @@
 
   .carousel {
     &__inner {
-      width: 700px;
+      width: 600px;
     }
   }
 
-  .slick-slide img {
-    max-width: 700px;
+  .slick {
+    &-slide img {
+      max-width: 600px;
+    }
   }
 
   .catalog {
@@ -63,6 +65,14 @@
       &:nth-child(2n) {
         margin-right: 0;
       }
+    }
+  }
+
+  .footer {
+    height: 530px;
+
+    &__info {
+      height: 250px;
     }
   }
 }
@@ -99,6 +109,10 @@
 
     &_submit {
       height: 50px;
+    }
+
+    &:hover {
+      box-shadow: none;
     }
   }
 
@@ -187,6 +201,7 @@
 
   .carousel {
     padding: 60px 0;
+
     &__inner {
       width: 500px;
     }
@@ -196,12 +211,14 @@
     &-slide img {
       max-width: 500px;
     }
+
     &-slider {
       position: relative;
       display: block;
       user-select: none;
       touch-action: pan-y;
     }
+
     &-dots {
       position: absolute;
       display: flex;
@@ -219,6 +236,7 @@
         margin: 0 5px;
         padding: 0;
         cursor: pointer;
+
         button {
           position: relative;
           font-size: 0;
@@ -232,6 +250,7 @@
           border: 0;
           outline: none;
           background: transparent;
+
           &:before {
             content: "";
             position: absolute;
@@ -243,7 +262,9 @@
             background-color: #000;
             opacity: 0.25;
           }
+
         }
+
         &.slick-active {
           button {
             &:before {
@@ -254,33 +275,75 @@
       }
     }
   }
+
   .catalog {
     &__tabs {
       margin-top: 50px;
     }
+
+    &__tab {
+      font-size: 16px;
+
+      &:hover {
+        box-shadow: none;
+        border: solid 2px #d0d0d0;
+      }
+    }
+
     &__content {
       margin-top: 50px;
       justify-content: center;
     }
+
     &-item {
       margin-right: 0;
+
       &:nth-child(3n) {
         margin-right: 0;
       }
+
       &:last-child {
         margin-bottom: 0;
       }
     }
   }
+
   .reviews {
     padding: 60px 0;
+
     &__items {
       margin-top: 50px;
     }
+
     &__item {
       margin-bottom: 50px;
+
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+  }
+
+  .footer {
+    height: 430px;
+
+    &__info {
+      height: 200px;
+      width: 350px;
+      padding: 35px 10px 20px;
+    }
+
+    &__phone {
+      margin-top: 20px;
+    }
+
+    &__social {
+      margin-top: 24px;
+
+      &-item {
+        &:hover {
+          box-shadow: none;
+        }
       }
     }
   }
@@ -301,6 +364,12 @@
     &__official {
       margin-top: 5px;
       order: 0;
+      flex-direction: column;
+
+      span {
+        margin: 0 auto;
+
+      }
     }
 
     &__phone {
@@ -341,6 +410,7 @@
       font-size: 16px;
     }
   }
+
   .carousel {
     padding: 60px 0;
 
@@ -354,29 +424,122 @@
       max-width: 300px;
     }
   }
+
   .catalog {
     &__tabs {
       margin-top: 40px;
       flex-direction: column;
     }
+
     &__tab {
       margin-bottom: 10px;
     }
+
     &__content {
       margin-top: 40px;
       padding: 0;
     }
   }
+
   .reviews {
     &__item {
       flex-direction: column;
       align-items: center;
     }
+
     &__descr {
       margin-top: 10px;
       margin-left: 0;
       width: 100%;
       text-align: center;
+    }
+  }
+
+  .footer {
+    height: 400px;
+
+    &__info {
+      top: auto;
+      bottom: -170px;
+      width: 100%;
+      height: 170px;
+      padding-top: 20px;
+    }
+
+    &__addr {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    max-width: 280px;
+  }
+
+  .promo {
+    &__icons {
+      margin-top: 0px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__icon {
+      margin-top: 20px;
+    }
+  }
+
+  .button {
+    &_main {
+      width: 280px;
+    }
+  }
+
+  .feed_form {
+    width: 280px;
+  }
+
+  .carousel {
+    &__inner {
+      width: 280px;
+    }
+  }
+
+  .slick {
+    &-slide img {
+      max-width: 280px;
+    }
+  }
+
+  .catalog {
+    &-item {
+      &__subtitle {
+        font-size: 14px;
+      }
+
+      &__descr {
+        font-size: 12px;
+      }
+
+      &__list {
+        li {
+          font-size: 12px;
+        }
+      }
+
+      &__new-price {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .reviews {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__text {
+      font-size: 12px;
     }
   }
 }
