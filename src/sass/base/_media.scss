@@ -470,6 +470,26 @@
       font-size: 18px;
     }
   }
+
+  .modal {
+    padding: 20px;
+    min-height: 360px;
+    width: 280px;
+
+    &__subtitle {
+      font-size: 15px;
+    }
+
+    &__descr {
+      margin-top: 4px;
+      font-size: 12px;
+    }
+
+    & .feed_form {
+      width: auto;
+    }
+  }
+
 }
 
 @media (max-width: 375px) {
@@ -540,6 +560,26 @@
 
     &__text {
       font-size: 12px;
+    }
+  }
+
+  .modal {
+    padding: 10px;
+    min-height: 330px;
+    width: 240px;
+
+    &__subtitle {
+      font-size: 13px;
+    }
+
+    &__descr {
+      font-size: 11px;
+    }
+
+    &__close {
+      right: -25px;
+      font-size: 30px;
+      line-height: 16px;
     }
   }
 }
