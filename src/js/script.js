@@ -2,8 +2,8 @@ $(document).ready(function () {
   $('.carousel__inner').slick({
     speed: 1200,
     //adaptiveHeight: true,
-    prevArrow: '<button type="button" class="slick-prev"><img src="../icons/slider/chevron-left.svg"></button>',
-    nextArrow: '<button type="button" class="slick-next"><img src="../icons/slider/chevron-right.svg"></button>',
+    prevArrow: '<button type="button" class="slick-prev"><img src="icons/slider/chevron-left.svg"></button>',
+    nextArrow: '<button type="button" class="slick-next"><img src="icons/slider/chevron-right.svg"></button>',
     responsive: [{
       breakpoint: 768,
       settings: {
@@ -56,10 +56,7 @@ $(document).ready(function () {
         phone: "required",
         email: {
           required: true,
-          email: {
-            required: true,
-            email: true
-          }
+          email: true
         }
       },
       messages: {
@@ -81,4 +78,19 @@ $(document).ready(function () {
   validateForms('#order form');
 
   $('input[name="phone"]').mask("+7 (999) 999-9999");
+
+  $('form').submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+    }).done(function () {
+      $(this).find("input").val("");
+      $('#consultation, #order').fadeOut();
+      $('.overlay, #thanks').fadeIn();
+      $('form').trigger('reset');
+    });
+    return false;
+  });
 });
