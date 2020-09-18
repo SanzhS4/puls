@@ -1,19 +1,18 @@
 $(document).ready(function () {
   $('.carousel__inner').slick({
     speed: 1200,
-    //adaptiveHeight: true,
-    prevArrow: '<button type="button" class="slick-prev"><img src="icons/slider/chevron-left.svg"></button>',
-    nextArrow: '<button type="button" class="slick-next"><img src="icons/slider/chevron-right.svg"></button>',
+    adaptiveHeight: true,
+    prevArrow: '<button type="button" class="slick-prev"><img src="icons/left.svg"></button>',
+    nextArrow: '<button type="button" class="slick-next"><img src="icons/right.svg"></button>',
     responsive: [{
-      breakpoint: 768,
+      breakpoint: 992,
       settings: {
         dots: true,
-        arrows: false,
-        dotsClass: 'slick-dots',
-        focusOnSelect: true
+        arrows: false
       }
     }]
   });
+
   $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function () {
     $(this)
       .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
@@ -29,21 +28,24 @@ $(document).ready(function () {
       })
     });
   };
+
   toggleSlide('.catalog-item__link');
   toggleSlide('.catalog-item__back');
+
   // Modal
+
   $('[data-modal=consultation]').on('click', function () {
     $('.overlay, #consultation').fadeIn('slow');
   });
   $('.modal__close').on('click', function () {
-    $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+    $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
   });
 
   $('.button_mini').each(function (i) {
     $(this).on('click', function () {
       $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
       $('.overlay, #order').fadeIn('slow');
-    });
+    })
   });
 
   function validateForms(form) {
@@ -67,7 +69,7 @@ $(document).ready(function () {
         phone: "Пожалуйста, введите свой номер телефона",
         email: {
           required: "Пожалуйста, введите свою почту",
-          email: "Ваш адрес почты должен быть в формете имя@domain.com"
+          email: "Неправильно введен адрес почты"
         }
       }
     });
@@ -77,7 +79,7 @@ $(document).ready(function () {
   validateForms('#consultation form');
   validateForms('#order form');
 
-  $('input[name="phone"]').mask("+7 (999) 999-9999");
+  $('input[name=phone]').mask("+7 (999) 999-99-99");
 
   $('form').submit(function (e) {
     e.preventDefault();
@@ -88,22 +90,25 @@ $(document).ready(function () {
     }).done(function () {
       $(this).find("input").val("");
       $('#consultation, #order').fadeOut();
-      $('.overlay, #thanks').fadeIn();
+      $('.overlay, #thanks').fadeIn('slow');
+
       $('form').trigger('reset');
     });
     return false;
   });
 
-  //smooth scroll and page up
+  // Smooth scroll and pageup
+
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 800) {
+    if ($(this).scrollTop() > 1600) {
       $('.pageup').fadeIn();
     } else {
       $('.pageup').fadeOut();
-    };
+    }
   });
+
   $("a[href^='#']").click(function () {
-    var _href = $(this).attr("href");
+    const _href = $(this).attr("href");
     $("html, body").animate({
       scrollTop: $(_href).offset().top + "px"
     });
