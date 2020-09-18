@@ -31,8 +31,6 @@ $(document).ready(function () {
   };
   toggleSlide('.catalog-item__link');
   toggleSlide('.catalog-item__back');
-<<<<<<< HEAD
-=======
   // Modal
   $('[data-modal=consultation]').on('click', function () {
     $('.overlay, #consultation').fadeIn('slow');
@@ -81,5 +79,4 @@ $(document).ready(function () {
   validateForms('#consultation-form');
   validateForms('#consultation form');
   validateForms('#order form');
->>>>>>> modal
 });
